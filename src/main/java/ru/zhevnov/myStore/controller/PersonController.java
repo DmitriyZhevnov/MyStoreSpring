@@ -40,6 +40,11 @@ public class PersonController {
         }
     }
 
+    @GetMapping("/main")
+    public String mainPage(){
+        return "person/mainPage";
+    }
+
     @GetMapping("/myPage")
     public String personalPage(@ModelAttribute("person") Person person) {
         return "person/personalPage";
@@ -79,6 +84,6 @@ public class PersonController {
         }
         System.out.println(person);
         model.addAttribute("person", person);
-        return "person/mainPage";
+        return "redirect:/myStore/main";
     }
 }

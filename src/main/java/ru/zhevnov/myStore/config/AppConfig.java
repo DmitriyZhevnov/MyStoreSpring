@@ -7,17 +7,10 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import ru.zhevnov.myStore.model.Basket;
-import ru.zhevnov.myStore.model.BasketItem;
-import ru.zhevnov.myStore.model.Person;
-import ru.zhevnov.myStore.model.Product;
-import ru.zhevnov.myStore.model.Role;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-import static org.hibernate.cfg.AvailableSettings.*;
 
 @Configuration
 @PropertySource("classpath:db.properties")
