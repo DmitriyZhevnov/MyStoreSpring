@@ -7,16 +7,26 @@
 --%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<style>
+    .round {
+        border-radius: 100px; /* Радиус скругления */
+        border: 3px #666; /* Параметры рамки */
+        box-shadow: 0 0 7px #666; /* Параметры тени */
+        margin: 6px;
+    }
+</style>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link href="<c:url value="/resources/images/style.css"/>" rel="stylesheet">
+    <p align="right"><a title="English" href="?lang=en"><img src="<c:url value="/resources/images/RU.png"/>" width="30px" height="30px"
+                                                             class="round"></a>
+        <a title="Russian" href="?lang=ru"><img src="<c:url value="/resources/images/UK.jpg"/>" width="30px" height="30px" class="round"></a></p>
+
     <title><spring:message code="login.title"/></title>
-    <select style="float: right" onchange="window.location.href=this.options[this.selectedIndex].value">
-        <option VALUE=""><spring:message code="app.lang.title"/> </option>
-        <option VALUE="?lang=en"><spring:message code="app.lang.english"/></option>
-        <option VALUE="?lang=ru"><spring:message code="app.lang.russian"/></option>
-        <option VALUE="?lang=de"><spring:message code="app.lang.deutsch"/></option>
-    </select>
+
 </head>
 <body>
 <form:form action="/myStore/login" method="post" modelAttribute="person">

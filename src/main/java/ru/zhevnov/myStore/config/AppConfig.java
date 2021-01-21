@@ -13,7 +13,7 @@ import java.util.Properties;
 
 
 @Configuration
-@PropertySource("classpath:db.properties")
+@PropertySource("classpath:h2.properties")
 @EnableTransactionManagement
 @ComponentScan(basePackages = "ru.zhevnov.myStore")
 public class AppConfig{
